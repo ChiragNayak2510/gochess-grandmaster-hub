@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone } from 'lucide-react';
@@ -13,9 +14,8 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/9cad5bba-a5f1-41c7-a40b-7c27a774caa3.png" 
                 alt="GoChess Logo" 
-                className="h-10 mr-2" 
+                className="h-12 mr-2 bg-white p-1 rounded" 
               />
-              <h3 className="text-xl font-bold">Go<span className="text-chess-secondary">Chess</span></h3>
             </div>
             <p className="text-gray-300 mb-4">Your Ultimate Hub for Chess Mastery!</p>
             <div className="flex items-center space-x-2 text-gray-300 mb-2">
@@ -60,22 +60,22 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">Our Programs</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/#hobby" className="text-gray-300 hover:text-chess-secondary transition-colors">
+                <Link to="/program/hobby" className="text-gray-300 hover:text-chess-secondary transition-colors">
                   Hobby Learners
                 </Link>
               </li>
               <li>
-                <Link to="/#competitive" className="text-gray-300 hover:text-chess-secondary transition-colors">
+                <Link to="/program/competitive" className="text-gray-300 hover:text-chess-secondary transition-colors">
                   Competitive Players
                 </Link>
               </li>
               <li>
-                <Link to="/#career" className="text-gray-300 hover:text-chess-secondary transition-colors">
+                <Link to="/program/career" className="text-gray-300 hover:text-chess-secondary transition-colors">
                   Career-Oriented Coaching
                 </Link>
               </li>
               <li>
-                <Link to="/#institutions" className="text-gray-300 hover:text-chess-secondary transition-colors">
+                <Link to="/our-tutors" className="text-gray-300 hover:text-chess-secondary transition-colors">
                   For Institutions
                 </Link>
               </li>

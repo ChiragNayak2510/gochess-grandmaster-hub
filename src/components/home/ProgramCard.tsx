@@ -1,76 +1,92 @@
 
 import React from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
+import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 
 interface ProgramCardProps {
+  id: string;
   title: string;
   description: string;
   topics: string[];
   audience: string;
   icon: React.ReactNode;
-  id: string;
   levels?: string[];
 }
 
-const ProgramCard: React.FC<ProgramCardProps> = ({
+const ProgramCard = ({
+  id,
   title,
   description,
   topics,
   audience,
   icon,
-  id,
   levels
-}) => {
+}: ProgramCardProps) => {
+  const getProgramLink = (id: string) => {
+    switch(id) {
+      case 'hobby':
+        return '/program/hobby';
+      case 'competitive':
+        return '/program/competitive';
+      case 'career':
+        return '/program/career';
+      default:
+        return '#';
+    }
+  };
+
   return (
-    <Card className="overflow-hidden h-full transition-all duration-300 hover:shadow-lg" id={id}>
-      <CardHeader className="bg-gray-50 border-b">
-        <div className="flex items-center gap-3">
-          <div className="text-chess-primary">{icon}</div>
-          <CardTitle>{title}</CardTitle>
+    <Card className="shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
+      <CardContent className="p-0">
+        <div className="bg-chess-primary text-white p-4 flex items-start gap-3">
+          <div className="bg-white/20 p-2 rounded-full">
+            {icon}
+          </div>
+          <h3 className="text-xl font-bold">{title}</h3>
         </div>
-        <CardDescription className="mt-2">{description}</CardDescription>
-      </CardHeader>
-      <CardContent className="pt-6">
-        <div className="mb-4">
-          <h4 className="font-semibold mb-2">Course Topics</h4>
-          <ul className="list-disc pl-5 space-y-1">
-            {topics.map((topic, index) => (
-              <li key={index} className="text-gray-700">{topic}</li>
-            ))}
-          </ul>
-        </div>
-        {levels && levels.length > 0 && (
-          <div className="mb-4">
-            <h4 className="font-semibold mb-2">Program Levels</h4>
-            <ul className="list-disc pl-5 space-y-1">
-              {levels.map((level, index) => (
-                <li key={index} className="text-gray-700">{level}</li>
+        
+        <div className="p-6 space-y-4">
+          <p className="text-gray-700">{description}</p>
+          
+          <div>
+            <h4 className="font-semibold mb-2">What You'll Learn:</h4>
+            <ul className="space-y-1">
+              {topics.map((topic, index) => (
+                <li key={index} className="flex items-center">
+                  <span className="bg-chess-secondary/10 text-chess-secondary w-2 h-2 rounded-full inline-block mr-2"></span>
+                  <span className="text-gray-700 text-sm">{topic}</span>
+                </li>
               ))}
             </ul>
           </div>
-        )}
-        <div>
-          <h4 className="font-semibold mb-2">For</h4>
-          <p className="text-gray-700">{audience}</p>
+          
+          {levels && levels.length > 0 && (
+            <div>
+              <h4 className="font-semibold mb-2">Levels:</h4>
+              <div className="flex flex-wrap gap-2">
+                {levels.map((level, index) => (
+                  <Badge key={index} variant="secondary" className="bg-gray-200 text-gray-700">
+                    {level}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+          )}
+          
+          <div>
+            <h4 className="font-semibold mb-2">Perfect For:</h4>
+            <p className="text-sm text-gray-600">{audience}</p>
+          </div>
+          
+          <Link to={getProgramLink(id)}>
+            <Button className="w-full bg-chess-primary hover:bg-chess-secondary">
+              Join This Program
+            </Button>
+          </Link>
         </div>
       </CardContent>
-      <CardFooter className="flex justify-end border-t pt-4">
-        {id === 'hobby' ? (
-          <Button className="bg-chess-primary hover:bg-chess-secondary" asChild>
-            <Link to="/program/hobby">Join This Program</Link>
-          </Button>
-        ) : id === 'competitive' ? (
-          <Button className="bg-chess-primary hover:bg-chess-secondary" asChild>
-            <Link to="/program/competitive">Select This Program</Link>
-          </Button>
-        ) : (
-          <Button className="bg-chess-primary hover:bg-chess-secondary" asChild>
-            <Link to="/program/career">Select This Program</Link>
-          </Button>
-        )}
-      </CardFooter>
     </Card>
   );
 };

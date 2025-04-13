@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import SectionTitle from '@/components/ui/section-title';
 import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
@@ -27,13 +28,14 @@ const Institutions = () => {
   return (
     <section className="py-20 bg-gray-50" id="institutions">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <SectionTitle 
+          title="Tutor Placement for Institutions" 
+          subtitle="Bring the benefits of chess education to your school or academy"
+          center
+        />
+        
+        <div className="grid md:grid-cols-2 gap-12 items-center mt-12">
           <div>
-            <SectionTitle 
-              title="Tutor Placement for Institutions" 
-              subtitle="Bring the benefits of chess education to your school or academy"
-            />
-            
             <div className="space-y-6 mb-8">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start gap-3">
@@ -48,9 +50,11 @@ const Institutions = () => {
               ))}
             </div>
             
-            <Button size="lg" className="bg-chess-primary hover:bg-chess-secondary">
-              Hire a Tutor
-            </Button>
+            <Link to="/our-tutors">
+              <Button size="lg" className="bg-chess-primary hover:bg-chess-secondary">
+                Hire a Tutor
+              </Button>
+            </Link>
           </div>
           
           <div className="bg-white p-8 rounded-lg shadow-lg border chess-gradient">
