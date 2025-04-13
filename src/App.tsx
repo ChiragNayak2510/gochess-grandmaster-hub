@@ -1,4 +1,5 @@
 
+import React from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -14,29 +15,33 @@ import ProgramHobby from "./pages/ProgramHobby";
 import ProgramCompetitive from "./pages/ProgramCompetitive";
 import ProgramCareer from "./pages/ProgramCareer";
 
+// Create a client
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/tutors" element={<Tutors />} />
-          <Route path="/our-tutors" element={<OurTutors />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/program/hobby" element={<ProgramHobby />} />
-          <Route path="/program/competitive" element={<ProgramCompetitive />} />
-          <Route path="/program/career" element={<ProgramCareer />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+// Properly define App as a React functional component
+const App: React.FC = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/tutors" element={<Tutors />} />
+            <Route path="/our-tutors" element={<OurTutors />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/program/hobby" element={<ProgramHobby />} />
+            <Route path="/program/competitive" element={<ProgramCompetitive />} />
+            <Route path="/program/career" element={<ProgramCareer />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
