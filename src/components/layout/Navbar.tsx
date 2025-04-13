@@ -15,21 +15,26 @@ const Navbar = () => {
     <nav className="border-b py-4 px-4 md:px-6 bg-white sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="flex items-center">
-          <span className="font-bold text-2xl">Go<span className="text-chess-primary">Chess</span></span>
+          <img 
+            src="/lovable-uploads/9cad5bba-a5f1-41c7-a40b-7c27a774caa3.png" 
+            alt="GoChess Logo" 
+            className="h-10 mr-2" 
+          />
+          <span className="font-bold text-2xl text-chess-primary">Go<span className="text-chess-secondary">Chess</span></span>
         </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6">
-          <Link to="/" className="font-medium hover:text-chess-primary transition-colors">
+          <Link to="/" className="font-medium hover:text-chess-secondary transition-colors">
             Home
           </Link>
-          <Link to="/about" className="font-medium hover:text-chess-primary transition-colors">
+          <Link to="/about" className="font-medium hover:text-chess-secondary transition-colors">
             About Us
           </Link>
-          <Link to="/tutors" className="font-medium hover:text-chess-primary transition-colors">
+          <Link to="/tutors" className="font-medium hover:text-chess-secondary transition-colors">
             Become a Tutor
           </Link>
-          <Link to="/contact" className="font-medium hover:text-chess-primary transition-colors">
+          <Link to="/contact" className="font-medium hover:text-chess-secondary transition-colors">
             Contact
           </Link>
           <Button className="bg-chess-primary hover:bg-chess-secondary">
@@ -49,28 +54,28 @@ const Navbar = () => {
           <div className="container mx-auto py-4 px-4 flex flex-col space-y-4">
             <Link 
               to="/" 
-              className="font-medium py-2 hover:text-chess-primary transition-colors"
+              className="font-medium py-2 hover:text-chess-secondary transition-colors"
               onClick={toggleMenu}
             >
               Home
             </Link>
             <Link 
               to="/about" 
-              className="font-medium py-2 hover:text-chess-primary transition-colors"
+              className="font-medium py-2 hover:text-chess-secondary transition-colors"
               onClick={toggleMenu}
             >
               About Us
             </Link>
             <Link 
               to="/tutors" 
-              className="font-medium py-2 hover:text-chess-primary transition-colors"
+              className="font-medium py-2 hover:text-chess-secondary transition-colors"
               onClick={toggleMenu}
             >
               Become a Tutor
             </Link>
             <Link 
               to="/contact" 
-              className="font-medium py-2 hover:text-chess-primary transition-colors"
+              className="font-medium py-2 hover:text-chess-secondary transition-colors"
               onClick={toggleMenu}
             >
               Contact
