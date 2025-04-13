@@ -17,6 +17,11 @@ const Programs = () => {
         'Endgame essentials',
         'Common patterns'
       ],
+      levels: [
+        'Beginner Level 1 - Introduction to Chess',
+        'Beginner Level 2 - Building Foundation',
+        'Beginner Level 3 - Basic Strategies'
+      ],
       audience: 'Beginners and recreational players of all ages who want to learn and enjoy chess.',
       icon: <Award size={28} />
     },
@@ -30,6 +35,10 @@ const Programs = () => {
         'Tactical patterns',
         'Strategic concepts',
         'Tournament preparation'
+      ],
+      levels: [
+        'Intermediate A - Tournament Preparation',
+        'Intermediate B - Advanced Strategies'
       ],
       audience: 'Players with basic knowledge who want to compete in tournaments and improve their rating.',
       icon: <Trophy size={28} />
@@ -69,6 +78,7 @@ const Programs = () => {
               topics={program.topics}
               audience={program.audience}
               icon={program.icon}
+              levels={program.levels}
             />
           ))}
         </div>

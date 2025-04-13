@@ -7,8 +7,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Tutors from "./pages/Tutors";
+import OurTutors from "./pages/OurTutors";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import ProgramHobby from "./pages/ProgramHobby";
+import ProgramCompetitive from "./pages/ProgramCompetitive";
+import ProgramCareer from "./pages/ProgramCareer";
 
 const queryClient = new QueryClient();
 
@@ -22,7 +26,11 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/tutors" element={<Tutors />} />
+          <Route path="/our-tutors" element={<OurTutors />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/program/hobby" element={<ProgramHobby />} />
+          <Route path="/program/competitive" element={<ProgramCompetitive />} />
+          <Route path="/program/career" element={<ProgramCareer />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

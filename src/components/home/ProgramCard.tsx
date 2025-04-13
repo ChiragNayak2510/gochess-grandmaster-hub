@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Link } from 'react-router-dom';
 
 interface ProgramCardProps {
   title: string;
@@ -10,6 +11,7 @@ interface ProgramCardProps {
   audience: string;
   icon: React.ReactNode;
   id: string;
+  levels?: string[];
 }
 
 const ProgramCard: React.FC<ProgramCardProps> = ({
@@ -18,7 +20,8 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
   topics,
   audience,
   icon,
-  id
+  id,
+  levels
 }) => {
   return (
     <Card className="overflow-hidden h-full transition-all duration-300 hover:shadow-lg" id={id}>
@@ -38,13 +41,35 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
             ))}
           </ul>
         </div>
+        {levels && levels.length > 0 && (
+          <div className="mb-4">
+            <h4 className="font-semibold mb-2">Program Levels</h4>
+            <ul className="list-disc pl-5 space-y-1">
+              {levels.map((level, index) => (
+                <li key={index} className="text-gray-700">{level}</li>
+              ))}
+            </ul>
+          </div>
+        )}
         <div>
           <h4 className="font-semibold mb-2">For</h4>
           <p className="text-gray-700">{audience}</p>
         </div>
       </CardContent>
       <CardFooter className="flex justify-end border-t pt-4">
-        <Button className="bg-chess-primary hover:bg-chess-secondary">Join This Program</Button>
+        {id === 'hobby' ? (
+          <Button className="bg-chess-primary hover:bg-chess-secondary" asChild>
+            <Link to="/program/hobby">Join This Program</Link>
+          </Button>
+        ) : id === 'competitive' ? (
+          <Button className="bg-chess-primary hover:bg-chess-secondary" asChild>
+            <Link to="/program/competitive">Select This Program</Link>
+          </Button>
+        ) : (
+          <Button className="bg-chess-primary hover:bg-chess-secondary" asChild>
+            <Link to="/program/career">Select This Program</Link>
+          </Button>
+        )}
       </CardFooter>
     </Card>
   );

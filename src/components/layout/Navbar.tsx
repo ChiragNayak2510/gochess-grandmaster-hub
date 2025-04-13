@@ -18,9 +18,9 @@ const Navbar = () => {
           <img 
             src="/lovable-uploads/9cad5bba-a5f1-41c7-a40b-7c27a774caa3.png" 
             alt="GoChess Logo" 
-            className="h-10 mr-2" 
+            className="h-12 md:h-14 mr-3" 
           />
-          <span className="font-bold text-2xl text-chess-primary">Go<span className="text-chess-secondary">Chess</span></span>
+          <span className="font-bold text-2xl md:text-3xl text-chess-primary">Go<span className="text-chess-secondary">Chess</span></span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -33,6 +33,9 @@ const Navbar = () => {
           </Link>
           <Link to="/tutors" className="font-medium hover:text-chess-secondary transition-colors">
             Become a Tutor
+          </Link>
+          <Link to="/our-tutors" className="font-medium hover:text-chess-secondary transition-colors">
+            Our Tutors
           </Link>
           <Link to="/contact" className="font-medium hover:text-chess-secondary transition-colors">
             Contact
@@ -72,6 +75,13 @@ const Navbar = () => {
               onClick={toggleMenu}
             >
               Become a Tutor
+            </Link>
+            <Link 
+              to="/our-tutors" 
+              className="font-medium py-2 hover:text-chess-secondary transition-colors"
+              onClick={toggleMenu}
+            >
+              Our Tutors
             </Link>
             <Link 
               to="/contact" 

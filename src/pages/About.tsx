@@ -3,6 +3,7 @@ import React from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import SectionTitle from '@/components/ui/section-title';
+import { Trophy, Award, Medal } from 'lucide-react';
 
 const About = () => {
   return (
@@ -20,8 +21,72 @@ const About = () => {
           </div>
         </div>
 
-        {/* Mission and Vision */}
+        {/* Founder Section */}
         <section className="py-16">
+          <div className="container mx-auto px-4">
+            <SectionTitle
+              title="Our Founder"
+              subtitle="Meet the visionary behind GoChess"
+            />
+            <div className="grid md:grid-cols-2 gap-12 mt-8 items-center">
+              <div className="order-2 md:order-1">
+                <h2 className="text-2xl font-bold mb-4">Tanisha Gotadke</h2>
+                <p className="text-gray-700 mb-4">
+                  Founded and grew GoChess Club, a chess startup delivering professional coaching to individuals, corporates, and academies across India, USA, UK, Singapore.
+                </p>
+                <p className="text-gray-700 mb-4">
+                  Built a network of skilled tutors, developed structured training programs, and conducted workshops to promote strategic thinking and problem-solving through chess.
+                </p>
+                <p className="text-gray-700 mb-4">
+                  Led operations, marketing, and client relations, sustaining 4+ years of consistent growth and impact in both educational and corporate spaces.
+                </p>
+                
+                <div className="mt-8">
+                  <h3 className="text-xl font-semibold mb-3">Achievements</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <div className="mt-1 bg-chess-primary rounded-full p-1">
+                        <Trophy size={16} className="text-white" />
+                      </div>
+                      <p className="text-gray-700">
+                        Participated at 2 Commonwealth Games in 2018, 2019 and 9 National Championships.
+                      </p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="mt-1 bg-chess-primary rounded-full p-1">
+                        <Award size={16} className="text-white" />
+                      </div>
+                      <p className="text-gray-700">
+                        Captained the VTU Chess Team for 4 consecutive years, representing the university.
+                      </p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="mt-1 bg-chess-primary rounded-full p-1">
+                        <Medal size={16} className="text-white" />
+                      </div>
+                      <p className="text-gray-700">
+                        Achieved State Champion title for 3 consecutive years, with numerous podium finishes at state-level tournaments.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="order-1 md:order-2 flex justify-center">
+                <div className="relative">
+                  <div className="absolute -inset-4 bg-chess-secondary/20 rounded-lg transform rotate-3"></div>
+                  <img 
+                    src="/lovable-uploads/56378c67-8ec9-4132-9691-974474038f5d.png" 
+                    alt="Tanisha Gotadke - Founder of GoChess" 
+                    className="rounded-lg relative z-10 max-w-sm shadow-lg" 
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Mission and Vision */}
+        <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12">
               <div>
@@ -47,7 +112,7 @@ const About = () => {
         </section>
 
         {/* Values */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16">
           <div className="container mx-auto px-4">
             <SectionTitle
               title="Our Core Values"
@@ -55,26 +120,26 @@ const About = () => {
               center
             />
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3">Excellence</h3>
+              <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:border-chess-secondary transition-colors">
+                <h3 className="text-xl font-semibold mb-3 text-chess-primary">Excellence</h3>
                 <p className="text-gray-600">
                   We are committed to providing the highest quality chess education through rigorous standards and continuous improvement.
                 </p>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3">Accessibility</h3>
+              <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:border-chess-secondary transition-colors">
+                <h3 className="text-xl font-semibold mb-3 text-chess-primary">Accessibility</h3>
                 <p className="text-gray-600">
                   We believe chess education should be available to everyone, regardless of location, age, or background.
                 </p>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3">Integrity</h3>
+              <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:border-chess-secondary transition-colors">
+                <h3 className="text-xl font-semibold mb-3 text-chess-primary">Integrity</h3>
                 <p className="text-gray-600">
                   We operate with honesty, transparency, and ethical conduct in all our interactions with students, tutors, and partners.
                 </p>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3">Innovation</h3>
+              <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:border-chess-secondary transition-colors">
+                <h3 className="text-xl font-semibold mb-3 text-chess-primary">Innovation</h3>
                 <p className="text-gray-600">
                   We continuously seek new and better ways to teach chess, embracing technology and creative teaching methods.
                 </p>
@@ -84,7 +149,7 @@ const About = () => {
         </section>
 
         {/* Story */}
-        <section className="py-16">
+        <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <SectionTitle
               title="Our Story"
@@ -93,7 +158,7 @@ const About = () => {
             />
             <div className="max-w-3xl mx-auto mt-8">
               <p className="text-gray-700 mb-4">
-                GoChess was founded in 2023 by a group of chess enthusiasts and educational experts who recognized the need for a structured, accessible platform for chess education in India and beyond.
+                GoChess was founded by Tanisha Gotadke, a chess enthusiast and educational expert who recognized the need for a structured, accessible platform for chess education in India and beyond.
               </p>
               <p className="text-gray-700 mb-4">
                 What started as a small initiative to connect chess tutors with students has quickly grown into a comprehensive platform that serves individual learners, competitive players, and educational institutions.
