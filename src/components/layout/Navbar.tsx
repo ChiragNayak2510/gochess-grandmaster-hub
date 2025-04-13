@@ -19,7 +19,7 @@ const Navbar = () => {
           <img 
             src="/lovable-uploads/9cad5bba-a5f1-41c7-a40b-7c27a774caa3.png" 
             alt="GoChess Logo" 
-            className="h-14 md:h-16" 
+            className="h-16 md:h-20" 
           />
         </Link>
 
@@ -42,6 +42,9 @@ const Navbar = () => {
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
+          <Link to="/about" className="font-medium hover:text-chess-secondary transition-colors">
+            About Us
+          </Link>
           <Link to="/our-tutors" className="font-medium hover:text-chess-secondary transition-colors">
             Our Tutors
           </Link>
@@ -99,6 +102,13 @@ const Navbar = () => {
                 </Link>
               </div>
             </div>
+            <Link 
+              to="/about" 
+              className="font-medium py-2 hover:text-chess-secondary transition-colors"
+              onClick={toggleMenu}
+            >
+              About Us
+            </Link>
             <Link 
               to="/our-tutors" 
               className="font-medium py-2 hover:text-chess-secondary transition-colors"
