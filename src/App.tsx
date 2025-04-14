@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -14,11 +13,10 @@ import NotFound from "./pages/NotFound";
 import ProgramHobby from "./pages/ProgramHobby";
 import ProgramCompetitive from "./pages/ProgramCompetitive";
 import ProgramCareer from "./pages/ProgramCareer";
+import StudentRegistration from "./pages/StudentRegistration";
 
-// Create a client
 const queryClient = new QueryClient();
 
-// Properly define App as a React functional component
 const App: React.FC = () => {
   return (
     <QueryClientProvider client={queryClient}>
@@ -35,7 +33,7 @@ const App: React.FC = () => {
             <Route path="/program/hobby" element={<ProgramHobby />} />
             <Route path="/program/competitive" element={<ProgramCompetitive />} />
             <Route path="/program/career" element={<ProgramCareer />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="/student-registration" element={<StudentRegistration />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -25,38 +24,40 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6">
-          <Link to="/" className="font-medium hover:text-chess-secondary transition-colors">
+          <Link to="/" className="text-base font-medium hover:text-chess-secondary transition-colors">
             Home
           </Link>
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="font-medium hover:text-chess-secondary transition-colors bg-transparent">Courses</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="text-base font-medium hover:text-chess-secondary transition-colors bg-transparent">Courses</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="grid w-[400px] gap-3 p-4">
-                    <Link to="/program/hobby" className="block p-3 hover:bg-gray-100 rounded-md">Hobby Learners</Link>
+                    <Link to="/program/hobby" className="block p-3 hover:bg-gray-100 rounded-md">Foundation Program</Link>
                     <Link to="/program/competitive" className="block p-3 hover:bg-gray-100 rounded-md">Competitive Players</Link>
-                    <Link to="/program/career" className="block p-3 hover:bg-gray-100 rounded-md">Career-Oriented Coaching</Link>
+                    <Link to="/program/career" className="block p-3 hover:bg-gray-100 rounded-md">Professional Training</Link>
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-          <Link to="/about" className="font-medium hover:text-chess-secondary transition-colors">
+          <Link to="/about" className="text-base font-medium hover:text-chess-secondary transition-colors">
             About Us
           </Link>
-          <Link to="/our-tutors" className="font-medium hover:text-chess-secondary transition-colors">
+          <Link to="/our-tutors" className="text-base font-medium hover:text-chess-secondary transition-colors">
             Our Tutors
           </Link>
-          <Link to="/contact" className="font-medium hover:text-chess-secondary transition-colors">
+          <Link to="/contact" className="text-base font-medium hover:text-chess-secondary transition-colors">
             Contact
           </Link>
-          <Link to="/tutors" className="font-medium hover:text-chess-secondary transition-colors">
+          <Link to="/tutors" className="text-base font-medium hover:text-chess-secondary transition-colors">
             Become a Tutor
           </Link>
-          <Button className="bg-chess-primary hover:bg-chess-secondary">
-            Join as Student
-          </Button>
+          <Link to="/student-registration">
+            <Button className="bg-chess-primary hover:bg-chess-secondary">
+              Join as Student
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -84,7 +85,7 @@ const Navbar = () => {
                   className="block py-1 hover:text-chess-secondary transition-colors"
                   onClick={toggleMenu}
                 >
-                  Hobby Learners
+                  Foundation Program
                 </Link>
                 <Link 
                   to="/program/competitive" 
@@ -98,7 +99,7 @@ const Navbar = () => {
                   className="block py-1 hover:text-chess-secondary transition-colors"
                   onClick={toggleMenu}
                 >
-                  Career-Oriented Coaching
+                  Professional Training
                 </Link>
               </div>
             </div>
@@ -130,9 +131,14 @@ const Navbar = () => {
             >
               Become a Tutor
             </Link>
-            <Button className="bg-chess-primary hover:bg-chess-secondary w-full">
-              Join as Student
-            </Button>
+            <Link 
+              to="/student-registration" 
+              onClick={toggleMenu}
+            >
+              <Button className="bg-chess-primary hover:bg-chess-secondary w-full">
+                Join as Student
+              </Button>
+            </Link>
           </div>
         </div>
       )}

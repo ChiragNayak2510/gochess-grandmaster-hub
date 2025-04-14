@@ -8,8 +8,8 @@ const Programs = () => {
   const programs = [
     {
       id: 'hobby',
-      title: 'Hobby Learners',
-      description: 'Perfect for beginners and casual players looking to learn the fundamentals and enjoy the game.',
+      title: 'Foundation Program',
+      description: 'A structured learning path for beginners to build strong chess fundamentals.',
       topics: [
         'Chess basics and rules',
         'Opening principles',
@@ -18,11 +18,11 @@ const Programs = () => {
         'Common patterns'
       ],
       levels: [
-        'Beginner Level 1 - Introduction to Chess',
-        'Beginner Level 2 - Building Foundation',
-        'Beginner Level 3 - Basic Strategies'
+        'Beginner Level 1 - 10 sessions',
+        'Beginner Level 2 - 15 sessions',
+        'Beginner Level 3 - 30 sessions'
       ],
-      audience: 'Beginners and recreational players of all ages who want to learn and enjoy chess.',
+      audience: 'Available in both One-on-One and Group training formats.',
       icon: <Award size={28} />
     },
     {
@@ -63,8 +63,8 @@ const Programs = () => {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <SectionTitle 
-          title="Chess Coaching Programs" 
-          subtitle="Structured learning paths designed for players at every level"
+          title="Chess Training Programs" 
+          subtitle="Comprehensive learning paths designed for players at every level"
           center
         />
         
