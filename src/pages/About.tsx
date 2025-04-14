@@ -1,9 +1,9 @@
-
 import React from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import SectionTitle from '@/components/ui/section-title';
 import { Trophy, Award, Medal } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const About = () => {
   return (
@@ -12,20 +12,12 @@ const About = () => {
       <main className="flex-grow">
         {/* Hero Section */}
         <div className="bg-gray-50 py-12 md:py-20">
-          <div className="container mx-auto px-4">
-            <SectionTitle
-              title="About GoChess"
-              subtitle="Your premier chess coaching platform for students and tutors alike"
-              center
-            />
-            <div className="max-w-3xl mx-auto mt-8 text-center">
-              <p className="text-gray-700">
-                GoChess connects passionate chess tutors with eager learners of all levels. 
-                Founded by international chess competitor Tanisha Gotadke, our platform offers 
-                structured learning paths designed to help you achieve your chess goals, whether 
-                you're a beginner or aiming for competitive mastery.
-              </p>
-            </div>
+          <div className="container mx-auto px-4 text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-chess-primary">About GoChess</h1>
+            <p className="text-gray-700 max-w-3xl mx-auto text-lg">
+              Your premier chess coaching platform for students and tutors alike
+            </p>
+            <div className="h-1 w-20 bg-chess-primary mt-4 mx-auto" />
           </div>
         </div>
 
