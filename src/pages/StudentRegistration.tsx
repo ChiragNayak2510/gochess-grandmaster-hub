@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -11,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card } from "@/components/ui/card";
 import SectionTitle from '@/components/ui/section-title';
+import { toast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
   firstName: z.string().min(2, "First name must be at least 2 characters"),
@@ -36,6 +36,10 @@ const StudentRegistration = () => {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
+    toast({
+      title: "Registration Submitted Successfully",
+      description: "We will contact you shortly. For faster response, you can reach us at 8762562549.",
+    });
   }
 
   return (
@@ -158,6 +162,11 @@ const StudentRegistration = () => {
                 <Button type="submit" className="w-full bg-chess-primary hover:bg-chess-secondary">
                   Submit Registration
                 </Button>
+
+                <p className="text-center mt-4 text-gray-600">
+                  After registration, we'll contact you shortly. For faster response, please contact us at: 
+                  <span className="font-semibold text-chess-primary"> 8762562549</span>
+                </p>
               </form>
             </Form>
           </Card>

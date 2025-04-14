@@ -9,7 +9,7 @@ const Programs = () => {
     {
       id: 'hobby',
       title: 'Foundation Program',
-      description: 'A structured learning path for beginners to build strong chess fundamentals.',
+      description: 'A structured learning path for beginners to build strong chess fundamentals, available in both individual and group formats.',
       topics: [
         'Chess basics and rules',
         'Opening principles',
@@ -22,7 +22,7 @@ const Programs = () => {
         'Beginner Level 2 - 15 sessions',
         'Beginner Level 3 - 30 sessions'
       ],
-      audience: 'Available in both One-on-One and Group training formats.',
+      audience: 'Perfect for beginners and intermediate players looking to establish a solid foundation in chess.',
       icon: <Award size={28} />
     },
     {

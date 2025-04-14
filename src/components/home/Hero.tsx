@@ -17,15 +17,21 @@ const Hero = () => {
             Whether you're a beginner or an advanced player, we have the right program for you.
           </p>
           <div className="flex flex-wrap gap-4">
-            <Button size="lg" className="bg-chess-primary hover:bg-chess-secondary text-white">
-              Join as a Student
-            </Button>
-            <Button size="lg" variant="outline" className="border-chess-primary text-chess-primary hover:bg-chess-primary hover:text-white">
-              <Link to="/tutors">Become a Tutor</Link>
-            </Button>
-            <Button size="lg" variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-100">
-              <Link to="/contact">Contact Us</Link>
-            </Button>
+            <Link to="/student-registration">
+              <Button size="lg" className="bg-chess-primary hover:bg-chess-secondary text-white">
+                Join as a Student
+              </Button>
+            </Link>
+            <Link to="/tutors">
+              <Button size="lg" variant="outline" className="border-chess-primary text-chess-primary hover:bg-chess-primary hover:text-white">
+                Become a Tutor
+              </Button>
+            </Link>
+            <Link to="/contact">
+              <Button size="lg" variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-100">
+                Contact Us
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

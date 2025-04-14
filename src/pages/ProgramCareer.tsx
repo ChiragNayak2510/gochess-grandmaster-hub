@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -13,28 +12,27 @@ const ProgramCareer = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
-        {/* Hero Section */}
         <div className="bg-gray-50 py-12 md:py-20">
           <div className="container mx-auto px-4">
             <SectionTitle
               title="Career-Oriented Coaching"
-              subtitle="Rigorous training for serious players aiming for professional chess careers"
+              subtitle="Build your professional chess career as a player, coach, or arbiter"
               center
             />
-            <div className="flex justify-center mt-4">
+            <div className="flex justify-center mt-4 gap-2">
               <Badge className="bg-chess-secondary hover:bg-chess-secondary px-4 py-1 text-white">Advanced Level</Badge>
+              <Badge className="bg-chess-primary hover:bg-chess-primary px-4 py-1 text-white">Professional Path</Badge>
             </div>
           </div>
         </div>
 
-        {/* Program Details */}
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <Card>
                 <CardHeader>
-                  <CardTitle>Elite Chess Training Program</CardTitle>
-                  <CardDescription>Comprehensive development for aspiring professionals</CardDescription>
+                  <CardTitle>Elite Chess Training & Career Development Program</CardTitle>
+                  <CardDescription>Comprehensive development for aspiring chess professionals</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-8">
@@ -160,7 +158,6 @@ const ProgramCareer = () => {
           </div>
         </section>
 
-        {/* Enrollment Form */}
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
