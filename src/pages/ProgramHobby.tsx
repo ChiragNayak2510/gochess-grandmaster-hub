@@ -1,9 +1,11 @@
+
 import React, { useEffect } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import SectionTitle from '@/components/ui/section-title';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { BookOpen, Users, Target } from 'lucide-react';
 import ProgramEnrollmentForm from '@/components/programs/ProgramEnrollmentForm';

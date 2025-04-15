@@ -5,6 +5,12 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 
+interface Level {
+  name: string;
+  sessions: number;
+  path: string;
+}
+
 interface ProgramCardProps {
   id: string;
   title: string;
@@ -12,7 +18,7 @@ interface ProgramCardProps {
   topics: string[];
   audience: string;
   icon: React.ReactNode;
-  levels?: string[];
+  levels?: string[] | Level[];
 }
 
 const ProgramCard = ({
@@ -68,7 +74,9 @@ const ProgramCard = ({
               <div className="flex flex-wrap gap-2">
                 {levels.map((level, index) => (
                   <Badge key={index} variant="secondary" className="bg-gray-200 text-gray-700">
-                    {level}
+                    {typeof level === 'string' 
+                      ? level 
+                      : `${level.name} - ${level.sessions} sessions`}
                   </Badge>
                 ))}
               </div>
