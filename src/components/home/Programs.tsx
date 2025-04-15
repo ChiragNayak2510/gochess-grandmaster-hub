@@ -1,5 +1,5 @@
-
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import SectionTitle from '@/components/ui/section-title';
 import ProgramCard from '@/components/home/ProgramCard';
 import { Award, Target, Trophy } from 'lucide-react';
@@ -9,7 +9,7 @@ const Programs = () => {
     {
       id: 'hobby',
       title: 'Foundation Program',
-      description: 'A structured learning path for beginners to build strong chess fundamentals, available in both individual and group formats.',
+      description: 'A structured learning path for beginners to build strong chess fundamentals.',
       topics: [
         'Chess basics and rules',
         'Opening principles',
@@ -18,9 +18,9 @@ const Programs = () => {
         'Common patterns'
       ],
       levels: [
-        'Beginner Level 1 - 10 sessions',
-        'Beginner Level 2 - 15 sessions',
-        'Beginner Level 3 - 30 sessions'
+        { name: 'Beginner Level 1', sessions: 10, path: '/program/hobby#level1' },
+        { name: 'Beginner Level 2', sessions: 15, path: '/program/hobby#level2' },
+        { name: 'Beginner Level 3', sessions: 30, path: '/program/hobby#level3' }
       ],
       audience: 'Perfect for beginners and intermediate players looking to establish a solid foundation in chess.',
       icon: <Award size={28} />
@@ -72,13 +72,7 @@ const Programs = () => {
           {programs.map((program) => (
             <ProgramCard
               key={program.id}
-              id={program.id}
-              title={program.title}
-              description={program.description}
-              topics={program.topics}
-              audience={program.audience}
-              icon={program.icon}
-              levels={program.levels}
+              {...program}
             />
           ))}
         </div>

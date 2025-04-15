@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -15,7 +14,7 @@ const Contact = () => {
       <main className="flex-grow">
         {/* Hero Section */}
         <div className="bg-gray-50 py-12 md:py-20">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 text-center">
             <SectionTitle
               title="Contact Us"
               subtitle="Get in touch with our team for any inquiries or support"
@@ -36,16 +35,18 @@ const Contact = () => {
                 </p>
                 
                 <div className="space-y-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="bg-chess-primary/10 p-3 rounded-full">
-                      <Phone className="h-6 w-6 text-chess-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-lg">Phone</h3>
-                      <p className="text-gray-700">+91 87625 62549</p>
-                      <p className="text-sm text-gray-500 mt-1">Monday-Friday, 9am-6pm IST</p>
-                    </div>
-                  </div>
+                  
+
+        <div className="flex items-start space-x-4">
+          <div className="bg-chess-primary/10 p-3 rounded-full">
+            <Phone className="h-6 w-6 text-chess-primary" />
+          </div>
+          <div>
+            <h3 className="font-semibold text-lg">Phone</h3>
+            <p className="text-gray-700">+91 87625 62549</p>
+            <p className="text-sm text-gray-500 mt-1">Available 24/7</p>
+          </div>
+        </div>
                   
                   <div className="flex items-start space-x-4">
                     <div className="bg-chess-primary/10 p-3 rounded-full">
@@ -58,18 +59,16 @@ const Contact = () => {
                     </div>
                   </div>
                   
-                  <div className="flex items-start space-x-4">
-                    <div className="bg-chess-primary/10 p-3 rounded-full">
-                      <MapPin className="h-6 w-6 text-chess-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-lg">Location</h3>
-                      <p className="text-gray-700">
-                        Delhi, India
-                      </p>
-                      <p className="text-sm text-gray-500 mt-1">For institutional inquiries, we can arrange in-person meetings</p>
-                    </div>
-                  </div>
+        <div className="flex items-start space-x-4">
+          <div className="bg-chess-primary/10 p-3 rounded-full">
+            <MapPin className="h-6 w-6 text-chess-primary" />
+          </div>
+          <div>
+            <h3 className="font-semibold text-lg">Location</h3>
+            <p className="text-gray-700">Bengaluru, India</p>
+            <p className="text-sm text-gray-500 mt-1">For institutional inquiries, we can arrange in-person meetings</p>
+          </div>
+        </div>
                 </div>
                 
                 {/* Social Media or Maps */}
@@ -127,23 +126,23 @@ const Contact = () => {
                 </div>
                 
                 {/* FAQ Section */}
-                <div className="mt-8 bg-gray-50 p-6 rounded-lg">
-                  <h3 className="font-semibold text-lg mb-4">Frequently Asked Questions</h3>
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-medium">How quickly will I receive a response?</h4>
-                      <p className="text-gray-600 text-sm mt-1">We typically respond to all inquiries within 24-48 hours during business days.</p>
-                    </div>
-                    <div>
-                      <h4 className="font-medium">Can I schedule a call to discuss programs?</h4>
-                      <p className="text-gray-600 text-sm mt-1">Yes, you can request a call in your message and we'll arrange a suitable time.</p>
-                    </div>
-                    <div>
-                      <h4 className="font-medium">Do you offer trial classes?</h4>
-                      <p className="text-gray-600 text-sm mt-1">Yes, we offer a free 30-minute trial class for new students to experience our teaching approach.</p>
-                    </div>
-                  </div>
-                </div>
+        <div className="mt-8 bg-gray-50 p-6 rounded-lg">
+          <h3 className="font-semibold text-lg mb-4">Frequently Asked Questions</h3>
+          <div className="space-y-4">
+            <div>
+              <h4 className="font-medium">How quickly will I receive a response?</h4>
+              <p className="text-gray-600 text-sm mt-1">We typically respond to all inquiries within 6-12 hours.</p>
+            </div>
+            <div>
+              <h4 className="font-medium">Can I schedule a call to discuss programs?</h4>
+              <p className="text-gray-600 text-sm mt-1">Yes, you can request a call in your message and we'll arrange a suitable time.</p>
+            </div>
+            <div>
+              <h4 className="font-medium">Do you offer trial classes?</h4>
+              <p className="text-gray-600 text-sm mt-1">Yes, we offer a free 30-minute trial class for new students to experience our teaching approach.</p>
+            </div>
+          </div>
+        </div>
               </div>
             </div>
           </div>

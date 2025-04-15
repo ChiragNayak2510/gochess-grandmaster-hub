@@ -1,16 +1,25 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import SectionTitle from '@/components/ui/section-title';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Clock, BookOpen, Users, Target } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { BookOpen, Users, Target } from 'lucide-react';
 import ProgramEnrollmentForm from '@/components/programs/ProgramEnrollmentForm';
 
 const ProgramHobby = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const hash = location.hash;
+    if (hash) {
+      const element = document.querySelector(hash);
+      element?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [location]);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -34,33 +43,29 @@ const ProgramHobby = () => {
           <div className="container mx-auto px-4">
             <h2 className="text-2xl font-bold mb-8 text-center">Choose Your Learning Path</h2>
             
-            <Tabs defaultValue="level1" className="w-full max-w-4xl mx-auto">
+            <Tabs defaultValue={location.hash.replace('#', '') || "level1"} className="w-full max-w-4xl mx-auto">
               <TabsList className="grid grid-cols-3 mb-8">
                 <TabsTrigger value="level1">Beginner Level 1</TabsTrigger>
                 <TabsTrigger value="level2">Beginner Level 2</TabsTrigger>
                 <TabsTrigger value="level3">Beginner Level 3</TabsTrigger>
               </TabsList>
               
-              <TabsContent value="level1">
+              <TabsContent value="level1" id="level1">
                 <Card>
                   <CardHeader>
                     <CardTitle>Beginner Level 1: Introduction to Chess</CardTitle>
-                    <CardDescription>Start your chess journey with the essentials</CardDescription>
+                    <CardDescription>10 sessions of foundational chess training</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-6">
-                      <div className="grid md:grid-cols-3 gap-4 mb-4">
-                        <div className="flex items-center gap-2">
-                          <Clock className="h-5 w-5 text-chess-primary" />
-                          <span>8 weeks program</span>
-                        </div>
+                      <div className="grid md:grid-cols-2 gap-4 mb-4">
                         <div className="flex items-center gap-2">
                           <BookOpen className="h-5 w-5 text-chess-primary" />
-                          <span>12 lessons</span>
+                          <span>10 sessions</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <Users className="h-5 w-5 text-chess-primary" />
-                          <span>Small group classes</span>
+                          <span>Individual & Group classes</span>
                         </div>
                       </div>
                       
@@ -85,26 +90,22 @@ const ProgramHobby = () => {
                 </Card>
               </TabsContent>
               
-              <TabsContent value="level2">
+              <TabsContent value="level2" id="level2">
                 <Card>
                   <CardHeader>
                     <CardTitle>Beginner Level 2: Building Foundation</CardTitle>
-                    <CardDescription>Strengthen your chess knowledge and develop your skills</CardDescription>
+                    <CardDescription>15 sessions to strengthen your chess knowledge</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-6">
-                      <div className="grid md:grid-cols-3 gap-4 mb-4">
-                        <div className="flex items-center gap-2">
-                          <Clock className="h-5 w-5 text-chess-primary" />
-                          <span>10 weeks program</span>
-                        </div>
+                      <div className="grid md:grid-cols-2 gap-4 mb-4">
                         <div className="flex items-center gap-2">
                           <BookOpen className="h-5 w-5 text-chess-primary" />
-                          <span>15 lessons</span>
+                          <span>15 sessions</span>
                         </div>
-                        <div className="flex items-center gap-2">
+                         <div className="flex items-center gap-2">
                           <Users className="h-5 w-5 text-chess-primary" />
-                          <span>Small group classes</span>
+                          <span>Individual & Group classes</span>
                         </div>
                       </div>
                       
@@ -129,22 +130,18 @@ const ProgramHobby = () => {
                 </Card>
               </TabsContent>
               
-              <TabsContent value="level3">
+              <TabsContent value="level3" id="level3">
                 <Card>
                   <CardHeader>
                     <CardTitle>Beginner Level 3: Basic Strategies</CardTitle>
-                    <CardDescription>Develop strategic thinking and start playing with confidence</CardDescription>
+                    <CardDescription>18 sessions to develop strategic thinking</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-6">
-                      <div className="grid md:grid-cols-3 gap-4 mb-4">
-                        <div className="flex items-center gap-2">
-                          <Clock className="h-5 w-5 text-chess-primary" />
-                          <span>12 weeks program</span>
-                        </div>
+                      <div className="grid md:grid-cols-2 gap-4 mb-4">
                         <div className="flex items-center gap-2">
                           <BookOpen className="h-5 w-5 text-chess-primary" />
-                          <span>18 lessons</span>
+                          <span>18 sessions</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <Target className="h-5 w-5 text-chess-primary" />
