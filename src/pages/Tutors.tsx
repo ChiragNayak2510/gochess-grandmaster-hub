@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -19,7 +18,7 @@ const Tutors = () => {
           <div className="container mx-auto px-4">
             <SectionTitle
               title="Join Our Team of Chess Tutors"
-              subtitle="Share your expertise and passion for chess while building a flexible career"
+              subtitle="Learn from experienced coaches dedicated to your chess development"
               center
             />
           </div>
@@ -31,7 +30,11 @@ const Tutors = () => {
             <div className="grid md:grid-cols-2 gap-12">
               {/* Benefits Section */}
               <div>
-                <h2 className="text-2xl font-bold mb-6">Why Teach with GoChess?</h2>
+                <h2 className="text-2xl font-bold mb-6 text-center">Share Your Expertise</h2>
+                <p className="text-center text-gray-700 mb-6">
+                  Share your passion for chess and build a flexible career with GoChess.
+                </p>
+                
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <div className="mt-1 bg-chess-primary rounded-full p-1">
@@ -95,7 +98,7 @@ const Tutors = () => {
               {/* Application Form */}
               <div>
                 <Card className="p-6">
-                  <h2 className="text-2xl font-bold mb-6">Apply to Become a Tutor</h2>
+                  <h2 className="text-2xl font-bold mb-6 text-center">Apply to Become a Tutor</h2>
                   <CardContent className="p-0">
                     <form className="space-y-4">
                       <div className="grid md:grid-cols-2 gap-4">
@@ -161,7 +164,7 @@ const Tutors = () => {
           <div className="container mx-auto px-4">
             <SectionTitle 
               title="What Our Tutors Say" 
-              subtitle="Hear from chess coaches who have joined the GoChess family"
+              subtitle="Get in touch with our team for any inquiries or support"
               center
             />
             
