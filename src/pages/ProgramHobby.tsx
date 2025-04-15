@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -136,14 +135,14 @@ const ProgramHobby = () => {
                 <Card>
                   <CardHeader>
                     <CardTitle>Beginner Level 3: Basic Strategies</CardTitle>
-                    <CardDescription>18 sessions to develop strategic thinking</CardDescription>
+                    <CardDescription>30 sessions to develop strategic thinking</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-6">
                       <div className="grid md:grid-cols-2 gap-4 mb-4">
                         <div className="flex items-center gap-2">
                           <BookOpen className="h-5 w-5 text-chess-primary" />
-                          <span>18 sessions</span>
+                          <span>30 sessions</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <Target className="h-5 w-5 text-chess-primary" />
@@ -153,19 +152,18 @@ const ProgramHobby = () => {
                       
                       <div>
                         <h3 className="font-semibold mb-2">What You'll Learn</h3>
-                        <ul className="list-disc pl-5 space-y-1">
-                          <li>Developing a basic opening repertoire</li>
-                          <li>Planning in the middlegame</li>
-                          <li>Common endgame positions</li>
-                          <li>Understanding piece values in different situations</li>
-                          <li>Calculation techniques</li>
-                          <li>Game analysis methods</li>
+                        <ul className="list-disc pl-5 space-y-2">
+                          <li>Build and maintain a comprehensive opening repertoire for both White and Black</li>
+                          <li>Advanced tactical patterns and combinations</li>
+                          <li>Strategic planning in complex positions</li>
+                          <li>Pawn structure analysis and manipulation</li>
+                          <li>Critical endgame positions and techniques</li>
+                          <li>Calculation and visualization training</li>
+                          <li>Game analysis methodology</li>
+                          <li>Tournament preparation strategies</li>
+                          <li>Psychology and practical playing tips</li>
+                          <li>Time management in different time controls</li>
                         </ul>
-                      </div>
-                      
-                      <div>
-                        <h3 className="font-semibold mb-2">Perfect For</h3>
-                        <p>Players with some experience who want to start playing in casual tournaments or online rated games with more confidence.</p>
                       </div>
                     </div>
                   </CardContent>

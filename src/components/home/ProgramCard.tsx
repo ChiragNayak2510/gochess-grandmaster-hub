@@ -1,9 +1,9 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 interface Level {
   name: string;
@@ -18,7 +18,7 @@ interface ProgramCardProps {
   topics: string[];
   audience: string;
   icon: React.ReactNode;
-  levels?: string[] | Level[];
+  levels?: Level[];
 }
 
 const ProgramCard = ({
@@ -30,17 +30,10 @@ const ProgramCard = ({
   icon,
   levels
 }: ProgramCardProps) => {
-  const getProgramLink = (id: string) => {
-    switch(id) {
-      case 'hobby':
-        return '/program/hobby';
-      case 'competitive':
-        return '/program/competitive';
-      case 'career':
-        return '/program/career';
-      default:
-        return '#';
-    }
+  const navigate = useNavigate();
+
+  const handleLevelClick = (path: string) => {
+    navigate(path);
   };
 
   return (
@@ -73,10 +66,13 @@ const ProgramCard = ({
               <h4 className="font-semibold mb-2">Levels:</h4>
               <div className="flex flex-wrap gap-2">
                 {levels.map((level, index) => (
-                  <Badge key={index} variant="secondary" className="bg-gray-200 text-gray-700">
-                    {typeof level === 'string' 
-                      ? level 
-                      : `${level.name} - ${level.sessions} sessions`}
+                  <Badge 
+                    key={index} 
+                    variant="secondary" 
+                    className="bg-gray-200 text-gray-700 cursor-pointer hover:bg-gray-300 transition-colors"
+                    onClick={() => handleLevelClick(level.path)}
+                  >
+                    {`${level.name} - ${level.sessions} sessions`}
                   </Badge>
                 ))}
               </div>

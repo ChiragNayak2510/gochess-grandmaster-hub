@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import SectionTitle from '@/components/ui/section-title';
@@ -11,11 +12,14 @@ const Programs = () => {
       title: 'Foundation Program',
       description: 'A structured learning path for beginners to build strong chess fundamentals.',
       topics: [
-        'Chess basics and rules',
-        'Opening principles',
-        'Basic tactics and strategies',
-        'Endgame essentials',
-        'Common patterns'
+        'Chess basics and game rules mastery',
+        'Essential opening principles and common variations',
+        'Basic tactics and pattern recognition',
+        'Fundamental endgame techniques',
+        'Strategic planning and piece coordination',
+        'Calculation methods and visualization',
+        'Common middlegame positions',
+        'Understanding pawn structures'
       ],
       levels: [
         { name: 'Beginner Level 1', sessions: 10, path: '/program/hobby#level1' },
@@ -30,15 +34,18 @@ const Programs = () => {
       title: 'Competitive Players',
       description: 'For those looking to participate in tournaments and improve their rating.',
       topics: [
-        'Advanced opening repertoire',
-        'Middlegame planning',
-        'Tactical patterns',
-        'Strategic concepts',
-        'Tournament preparation'
+        'Advanced opening repertoire development',
+        'Complex middlegame planning and execution',
+        'Advanced tactical patterns and combinations',
+        'Deep strategic concepts and positional play',
+        'Tournament preparation and psychology',
+        'Game analysis and improvement methods',
+        'Time management techniques',
+        'Rating improvement strategies'
       ],
       levels: [
-        'Intermediate A - Tournament Preparation',
-        'Intermediate B - Advanced Strategies'
+        { name: 'Intermediate A', sessions: 12, path: '/program/competitive#levelA' },
+        { name: 'Intermediate B', sessions: 14, path: '/program/competitive#levelB' }
       ],
       audience: 'Players with basic knowledge who want to compete in tournaments and improve their rating.',
       icon: <Trophy size={28} />

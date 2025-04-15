@@ -130,6 +130,8 @@ const StudentRegistration = () => {
                           <SelectItem value="b1">Beginner Level 1 (10 sessions)</SelectItem>
                           <SelectItem value="b2">Beginner Level 2 (15 sessions)</SelectItem>
                           <SelectItem value="b3">Beginner Level 3 (30 sessions)</SelectItem>
+                          <SelectItem value="intA">Intermediate A (12 sessions)</SelectItem>
+                          <SelectItem value="intB">Intermediate B (14 sessions)</SelectItem>
                         </SelectContent>
                       </Select>
                       <FormMessage />
