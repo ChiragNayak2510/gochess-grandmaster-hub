@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
@@ -20,6 +21,11 @@ interface ProgramCardProps {
   icon: React.ReactNode;
   levels?: Level[];
 }
+
+// Helper function to generate program links
+const getProgramLink = (programId: string) => {
+  return `/program/${programId}`;
+};
 
 const ProgramCard = ({
   id,
