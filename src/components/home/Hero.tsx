@@ -8,10 +8,12 @@ const Hero = () => {
   return (
     <div className="relative overflow-hidden">
       <div 
-        className="absolute inset-0 bg-cover bg-center opacity-20" 
+        className="absolute inset-0 bg-cover bg-center" 
         style={{ 
           backgroundImage: `url('/lovable-uploads/34cd96f5-265d-40bc-9a8f-8e85e82618cf.png')`,
-          filter: 'grayscale(50%) brightness(120%)'
+          filter: 'brightness(0.7) contrast(1.2)',
+          opacity: 0.3,
+          top: '64px', // Adjust this value to match navbar height
         }}
       />
       <div className="relative z-10 container mx-auto px-4 py-24 md:py-36">
