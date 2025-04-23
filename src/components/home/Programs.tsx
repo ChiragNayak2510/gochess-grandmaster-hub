@@ -1,16 +1,17 @@
 
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import SectionTitle from '@/components/ui/section-title';
 import ProgramCard from '@/components/home/ProgramCard';
-import { Award, Target, Trophy } from 'lucide-react';
+import { Award, Target, Trophy, ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Programs = () => {
   const programs = [
     {
       id: 'hobby',
       title: 'Foundation Program',
-      description: 'A structured learning path for beginners to build strong chess fundamentals.',
+      description: 'Build a solid chess foundation with strategic fundamentals and pattern recognition.',
       topics: [
         'Chess basics and game rules mastery',
         'Essential opening principles and common variations',
@@ -27,12 +28,12 @@ const Programs = () => {
         { name: 'Beginner Level 3', sessions: 30, path: '/program/hobby#level3' }
       ],
       audience: 'Perfect for beginners and intermediate players looking to establish a solid foundation in chess.',
-      icon: <Award size={28} />
+      icon: <Award size={28} className="text-white" />
     },
     {
       id: 'competitive',
-      title: 'Competitive Players',
-      description: 'For those looking to participate in tournaments and improve their rating.',
+      title: 'Competitive Edge',
+      description: 'Elevate your tournament play with advanced strategies and rating improvement techniques.',
       topics: [
         'Advanced opening repertoire development',
         'Complex middlegame planning and execution',
@@ -48,12 +49,12 @@ const Programs = () => {
         { name: 'Intermediate B', sessions: 14, path: '/program/competitive#levelB' }
       ],
       audience: 'Players with basic knowledge who want to compete in tournaments and improve their rating.',
-      icon: <Trophy size={28} />
+      icon: <Trophy size={28} className="text-white" />
     },
     {
       id: 'career',
-      title: 'Career-Oriented Coaching',
-      description: 'Rigorous training for serious players aiming for professional chess careers.',
+      title: 'Elite Performance',
+      description: 'Comprehensive training for serious players aiming for chess mastery and professional careers.',
       topics: [
         'Professional opening analysis',
         'Advanced strategic planning',
@@ -62,18 +63,33 @@ const Programs = () => {
         'Personalized game analysis'
       ],
       audience: 'Serious players aiming for titles, high ratings, and professional chess careers.',
-      icon: <Target size={28} />
+      icon: <Target size={28} className="text-white" />
     }
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 bg-white">
       <div className="container mx-auto px-4">
-        <SectionTitle 
-          title="Chess Training Programs" 
-          subtitle="Comprehensive learning paths designed for players at every level"
-          center
-        />
+        <div className="flex flex-col md:flex-row justify-between items-end mb-12">
+          <div>
+            <div className="inline-block bg-chess-primary/10 text-chess-primary font-medium px-3 py-1 rounded-full mb-4 text-sm">
+              Expert-Led Programs
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Strategic Chess Development
+            </h2>
+            <p className="text-gray-600 max-w-2xl">
+              Our structured learning paths are designed for players at every level, focusing on strategic growth and measurable outcomes.
+            </p>
+          </div>
+          
+          <Link to="/our-tutors" className="mt-6 md:mt-0">
+            <Button variant="outline" className="border-chess-primary text-chess-primary group">
+              Meet Our Expert Coaches
+              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </Link>
+        </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {programs.map((program) => (

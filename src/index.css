@@ -98,7 +98,7 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', 'Poppins', sans-serif;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -117,5 +117,26 @@
   
   .chess-gradient {
     background: linear-gradient(90deg, rgba(155, 135, 245, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+  }
+  
+  .premium-gradient {
+    background: linear-gradient(to right, #254451 0%, #1a2c35 100%);
+  }
+  
+  .section-title {
+    @apply relative inline-block;
+  }
+  
+  .section-title::after {
+    content: '';
+    @apply block h-1 w-20 bg-chess-primary mt-2 rounded-full;
+  }
+  
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+  
+  .shadow-premium {
+    box-shadow: 0 10px 30px -10px rgba(37, 68, 81, 0.2);
   }
 }
