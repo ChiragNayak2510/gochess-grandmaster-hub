@@ -6,10 +6,16 @@ import { ArrowRight, Brain, Trophy, Target } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <div className="relative chess-pattern">
-      <div className="absolute inset-0 bg-gradient-to-r from-white to-transparent"></div>
-      <div className="container mx-auto px-4 py-24 md:py-36 relative z-10">
-        <div className="max-w-3xl">
+    <div className="relative overflow-hidden">
+      <div 
+        className="absolute inset-0 bg-cover bg-center opacity-20" 
+        style={{ 
+          backgroundImage: `url('/lovable-uploads/34cd96f5-265d-40bc-9a8f-8e85e82618cf.png')`,
+          filter: 'grayscale(50%) brightness(120%)'
+        }}
+      />
+      <div className="relative z-10 container mx-auto px-4 py-24 md:py-36">
+        <div className="max-w-3xl relative">
           <div className="inline-block bg-chess-primary/10 text-chess-primary font-medium px-4 py-2 rounded-full mb-6">
             Mastery Through Strategic Thinking
           </div>
