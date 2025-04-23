@@ -11,8 +11,8 @@ const Hero = () => {
         className="absolute inset-0 bg-cover bg-center" 
         style={{ 
           backgroundImage: `url('/lovable-uploads/34cd96f5-265d-40bc-9a8f-8e85e82618cf.png')`,
-          filter: 'brightness(0.7) contrast(1.2)',
-          opacity: 0.3,
+          filter: 'brightness(0.85) contrast(1.1)',
+          opacity: 0.6,
           top: '64px', // Adjust this value to match navbar height
         }}
       />
