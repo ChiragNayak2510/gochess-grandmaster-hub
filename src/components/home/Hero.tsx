@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -8,7 +9,7 @@ const Hero = () => {
   return (
     <div className="relative overflow-hidden">
       <BackgroundSlideshow />
-      <div className="relative z-10 container mx-auto px-4 py-24 md:py-36">
+      <div className="relative z-10 container mx-auto px-4 py-24 md:py-36 flex items-center justify-center min-h-[80vh]">
         <div className="max-w-3xl relative backdrop-blur-sm bg-white/70 p-8 rounded-lg">
           <div className="inline-block bg-chess-primary/10 text-chess-primary font-medium px-4 py-2 rounded-full mb-6">
             Mastery Through Strategic Thinking

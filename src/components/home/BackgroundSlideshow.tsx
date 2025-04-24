@@ -1,7 +1,7 @@
+
 import React, { useState, useEffect } from 'react';
 
 const images = [
-  'https://images.unsplash.com/photo-1604948501466-4e9c339b9c24',  // Professional chess set
   'https://images.unsplash.com/photo-1529699211952-734e80c4d42b',  // Strategic chess move
   'https://images.unsplash.com/photo-1580541832626-2a7131ee809f',  // Chess player thinking
   'https://images.unsplash.com/photo-1560174038-da43ac74f01b'   // Elegant chess pieces
@@ -30,7 +30,7 @@ const BackgroundSlideshow = () => {
           }}
         />
       ))}
-      <div className="absolute inset-0 bg-black/30" /> {/* Overlay to ensure text readability */}
+      <div className="absolute inset-0 bg-black/30" />
     </div>
   );
 };
