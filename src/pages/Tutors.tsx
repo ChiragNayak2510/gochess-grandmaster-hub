@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useToast } from '@/components/ui/use-toast';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import SectionTitle from '@/components/ui/section-title';
@@ -9,6 +10,45 @@ import { Textarea } from '@/components/ui/textarea';
 import { Check, Upload } from 'lucide-react';
 
 const Tutors = () => {
+  const { toast } = useToast();
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+
+  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      if (file.size > 5 * 1024 * 1024) { // 5MB limit
+        toast({
+          title: "File too large",
+          description: "Please upload a file smaller than 5MB",
+          variant: "destructive"
+        });
+        return;
+      }
+      if (!['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'].includes(file.type)) {
+        toast({
+          title: "Invalid file type",
+          description: "Please upload a PDF or Word document",
+          variant: "destructive"
+        });
+        return;
+      }
+      setSelectedFile(file);
+      toast({
+        title: "File uploaded",
+        description: "Your resume has been uploaded successfully"
+      });
+    }
+  };
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    // Add your form submission logic here
+    toast({
+      title: "Application submitted",
+      description: "We'll review your application and get back to you soon!"
+    });
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -100,7 +140,7 @@ const Tutors = () => {
                 <Card className="p-6">
                   <h2 className="text-2xl font-bold mb-6 text-center">Apply to Become a Tutor</h2>
                   <CardContent className="p-0">
-                    <form className="space-y-4">
+                    <form className="space-y-4" onSubmit={handleSubmit}>
                       <div className="grid md:grid-cols-2 gap-4">
                         <div>
                           <label htmlFor="firstName" className="block text-sm font-medium mb-1">First Name</label>
@@ -144,13 +184,26 @@ const Tutors = () => {
                       <div>
                         <label className="block text-sm font-medium mb-2">Upload Resume/Certificate</label>
                         <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center cursor-pointer hover:bg-gray-50 transition-colors">
-                          <Upload className="mx-auto h-8 w-8 text-gray-400 mb-2" />
-                          <p className="text-sm text-gray-500">Click to upload or drag and drop</p>
-                          <p className="text-xs text-gray-400 mt-1">PDF, DOC, DOCX (Max 5MB)</p>
+                          <input
+                            type="file"
+                            onChange={handleFileUpload}
+                            className="hidden"
+                            id="resume-upload"
+                            accept=".pdf,.doc,.docx"
+                          />
+                          <label htmlFor="resume-upload" className="cursor-pointer">
+                            <Upload className="mx-auto h-8 w-8 text-gray-400 mb-2" />
+                            <p className="text-sm text-gray-500">
+                              {selectedFile ? selectedFile.name : "Click to upload or drag and drop"}
+                            </p>
+                            <p className="text-xs text-gray-400 mt-1">PDF, DOC, DOCX (Max 5MB)</p>
+                          </label>
                         </div>
                       </div>
                       
-                      <Button className="w-full bg-chess-primary hover:bg-chess-secondary">Submit Application</Button>
+                      <Button type="submit" className="w-full bg-chess-primary hover:bg-chess-secondary">
+                        Submit Application
+                      </Button>
                     </form>
                   </CardContent>
                 </Card>

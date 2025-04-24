@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 
 const images = [
@@ -14,7 +13,7 @@ const BackgroundSlideshow = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 1000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
@@ -37,4 +36,3 @@ const BackgroundSlideshow = () => {
 };
 
 export default BackgroundSlideshow;
-
