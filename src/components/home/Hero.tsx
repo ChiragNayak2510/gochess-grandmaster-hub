@@ -1,21 +1,13 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Brain, Trophy, Target } from 'lucide-react';
+import BackgroundSlideshow from './BackgroundSlideshow';
 
 const Hero = () => {
   return (
     <div className="relative overflow-hidden">
-      <div 
-        className="absolute inset-0 bg-cover bg-center" 
-        style={{ 
-          backgroundImage: `url('/lovable-uploads/34cd96f5-265d-40bc-9a8f-8e85e82618cf.png')`,
-          filter: 'brightness(1) contrast(1)',
-          opacity: 1,
-          top: '64px', // Adjust this value to match navbar height
-        }}
-      />
+      <BackgroundSlideshow />
       <div className="relative z-10 container mx-auto px-4 py-24 md:py-36">
         <div className="max-w-3xl relative backdrop-blur-sm bg-white/70 p-8 rounded-lg">
           <div className="inline-block bg-chess-primary/10 text-chess-primary font-medium px-4 py-2 rounded-full mb-6">
