@@ -2,9 +2,10 @@
 import React, { useState, useEffect } from 'react';
 
 const images = [
-  '/lovable-uploads/34cd96f5-265d-40bc-9a8f-8e85e82618cf.png',
-  '/lovable-uploads/56378c67-8ec9-4132-9691-974474038f5d.png',
-  '/lovable-uploads/9cad5bba-a5f1-41c7-a40b-7c27a774caa3.png'
+  'https://images.unsplash.com/photo-1604948501466-4e9c339b9c24',  // Professional chess set
+  'https://images.unsplash.com/photo-1529699211952-734e80c4d42b',  // Strategic chess move
+  'https://images.unsplash.com/photo-1580541832626-2a7131ee809f',  // Chess player thinking
+  'https://images.unsplash.com/photo-1560174038-da43ac74f01b'   // Elegant chess pieces
 ];
 
 const BackgroundSlideshow = () => {
@@ -25,13 +26,15 @@ const BackgroundSlideshow = () => {
           key={image}
           className="absolute inset-0 bg-cover bg-center transition-opacity duration-500"
           style={{
-            backgroundImage: `url('${image}')`,
-            opacity: currentImageIndex === index ? 1 : 0,
+            backgroundImage: `url('${image}?auto=format&fit=crop&w=2000&q=80')`,
+            opacity: currentImageIndex === index ? 0.8 : 0,
           }}
         />
       ))}
+      <div className="absolute inset-0 bg-black/30" /> {/* Overlay to ensure text readability */}
     </div>
   );
 };
 
 export default BackgroundSlideshow;
+
