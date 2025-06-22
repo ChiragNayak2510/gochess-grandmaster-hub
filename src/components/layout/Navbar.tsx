@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -18,43 +19,43 @@ const Navbar = () => {
           <img 
             src="/lovable-uploads/9cad5bba-a5f1-41c7-a40b-7c27a774caa3.png" 
             alt="GoChess Logo" 
-            className="h-16 md:h-20" 
+            className="h-20 md:h-24" 
           />
         </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6">
-          <Link to="/" className="text-base font-medium hover:text-chess-secondary transition-colors">
+          <Link to="/" className="text-base font-medium hover:text-chess-secondary transition-colors font-inter">
             Home
           </Link>
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-base font-medium hover:text-chess-secondary transition-colors bg-transparent">Courses</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="text-base font-medium hover:text-chess-secondary transition-colors bg-transparent font-inter">Courses</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="grid w-[400px] gap-3 p-4">
-                    <Link to="/program/hobby" className="block p-3 hover:bg-gray-100 rounded-md">Foundation Program</Link>
-                    <Link to="/program/competitive" className="block p-3 hover:bg-gray-100 rounded-md">Competitive Players</Link>
-                    <Link to="/program/career" className="block p-3 hover:bg-gray-100 rounded-md">Professional Training</Link>
+                    <Link to="/program/hobby" className="block p-3 hover:bg-gray-100 rounded-md font-inter text-base">Foundation Program</Link>
+                    <Link to="/program/competitive" className="block p-3 hover:bg-gray-100 rounded-md font-inter text-base">Competitive Players</Link>
+                    <Link to="/program/career" className="block p-3 hover:bg-gray-100 rounded-md font-inter text-base">Professional Training</Link>
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-          <Link to="/about" className="text-base font-medium hover:text-chess-secondary transition-colors">
+          <Link to="/about" className="text-base font-medium hover:text-chess-secondary transition-colors font-inter">
             About Us
           </Link>
-          <Link to="/our-tutors" className="text-base font-medium hover:text-chess-secondary transition-colors">
+          <Link to="/our-tutors" className="text-base font-medium hover:text-chess-secondary transition-colors font-inter">
             Our Tutors
           </Link>
-          <Link to="/contact" className="text-base font-medium hover:text-chess-secondary transition-colors">
+          <Link to="/contact" className="text-base font-medium hover:text-chess-secondary transition-colors font-inter">
             Contact
           </Link>
-          <Link to="/tutors" className="text-base font-medium hover:text-chess-secondary transition-colors">
+          <Link to="/tutors" className="text-base font-medium hover:text-chess-secondary transition-colors font-inter">
             Become a Tutor
           </Link>
           <Link to="/student-registration">
-            <Button className="bg-chess-primary hover:bg-chess-secondary">
+            <Button className="bg-chess-primary hover:bg-chess-secondary font-inter">
               Join as Student
             </Button>
           </Link>
@@ -68,35 +69,35 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-16 left-0 right-0 bg-white z-50 border-b shadow-lg">
+        <div className="md:hidden absolute top-20 left-0 right-0 bg-white z-50 border-b shadow-lg">
           <div className="container mx-auto py-4 px-4 flex flex-col space-y-4">
             <Link 
               to="/" 
-              className="font-medium py-2 hover:text-chess-secondary transition-colors"
+              className="font-medium py-2 hover:text-chess-secondary transition-colors font-inter text-base"
               onClick={toggleMenu}
             >
               Home
             </Link>
             <div className="py-2">
-              <p className="font-medium mb-2">Courses</p>
+              <p className="font-medium mb-2 font-inter text-base">Courses</p>
               <div className="pl-4 space-y-2">
                 <Link 
                   to="/program/hobby" 
-                  className="block py-1 hover:text-chess-secondary transition-colors"
+                  className="block py-1 hover:text-chess-secondary transition-colors font-inter text-base"
                   onClick={toggleMenu}
                 >
                   Foundation Program
                 </Link>
                 <Link 
                   to="/program/competitive" 
-                  className="block py-1 hover:text-chess-secondary transition-colors"
+                  className="block py-1 hover:text-chess-secondary transition-colors font-inter text-base"
                   onClick={toggleMenu}
                 >
                   Competitive Players
                 </Link>
                 <Link 
                   to="/program/career" 
-                  className="block py-1 hover:text-chess-secondary transition-colors"
+                  className="block py-1 hover:text-chess-secondary transition-colors font-inter text-base"
                   onClick={toggleMenu}
                 >
                   Professional Training
@@ -105,28 +106,28 @@ const Navbar = () => {
             </div>
             <Link 
               to="/about" 
-              className="font-medium py-2 hover:text-chess-secondary transition-colors"
+              className="font-medium py-2 hover:text-chess-secondary transition-colors font-inter text-base"
               onClick={toggleMenu}
             >
               About Us
             </Link>
             <Link 
               to="/our-tutors" 
-              className="font-medium py-2 hover:text-chess-secondary transition-colors"
+              className="font-medium py-2 hover:text-chess-secondary transition-colors font-inter text-base"
               onClick={toggleMenu}
             >
               Our Tutors
             </Link>
             <Link 
               to="/contact" 
-              className="font-medium py-2 hover:text-chess-secondary transition-colors"
+              className="font-medium py-2 hover:text-chess-secondary transition-colors font-inter text-base"
               onClick={toggleMenu}
             >
               Contact
             </Link>
             <Link 
               to="/tutors" 
-              className="font-medium py-2 hover:text-chess-secondary transition-colors"
+              className="font-medium py-2 hover:text-chess-secondary transition-colors font-inter text-base"
               onClick={toggleMenu}
             >
               Become a Tutor
@@ -135,7 +136,7 @@ const Navbar = () => {
               to="/student-registration" 
               onClick={toggleMenu}
             >
-              <Button className="bg-chess-primary hover:bg-chess-secondary w-full">
+              <Button className="bg-chess-primary hover:bg-chess-secondary w-full font-inter">
                 Join as Student
               </Button>
             </Link>

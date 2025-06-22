@@ -1,4 +1,5 @@
 
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -19,6 +20,9 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'inter': ['Inter', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -64,11 +68,13 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				chess: {
-					primary: '#254451',
-					secondary: '#2fbbc7',
-					light: '#F3F3F3',
-					dark: '#222222',
-					accent: '#F97316',
+					primary: '#1a4a5a',
+					secondary: '#ff6b35',
+					light: '#f8f9fa',
+					dark: '#2c3e50',
+					accent: '#ffd700',
+					blue: '#4a90e2',
+					green: '#27ae60'
 				}
 			},
 			borderRadius: {
@@ -102,3 +108,4 @@ export default {
 	},
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+
