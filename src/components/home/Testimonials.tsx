@@ -16,7 +16,7 @@ const testimonials = [
     name: "Priya Shah",
     role: "Won National Junior Championship",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=100&auto=format&fit=crop",
-    text: "Beyond technical improvement, I developed a champion's mindset. My coach didn't just teach me chess - he taught me how to think strategically under pressure.",
+    text: "We've seen such a boost in confidence ever since our son started learning chess here. It's not just about the game — it's helping him focus better in school too",
     rating: 5
   },
   {
