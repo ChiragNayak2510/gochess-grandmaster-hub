@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, MapPin, Phone } from 'lucide-react';
+import { toast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -32,7 +33,10 @@ const Contact = () => {
         ...formData,
         createdAt: Timestamp.now(),
       });
-      alert('Your message was sent successfully!');
+      toast({
+        title: "Request Submitted Successfully",
+        description: "We will contact you shortly. For faster response, you can reach us at 8762562549.",
+      });
       setFormData({
         firstName: '',
         lastName: '',
@@ -43,7 +47,10 @@ const Contact = () => {
       });
     } catch (error) {
       console.error('Error saving contact message:', error);
-      alert('Something went wrong. Please try again.');
+      toast({
+        title: "Something went wrong",
+        description: "Please try again later.",
+      });
     }
   };
 
