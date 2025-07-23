@@ -11,6 +11,7 @@ import { Check, Upload } from 'lucide-react';
 import { db } from '@/lib/firebase';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 
+
 const Tutors = () => {
   const { toast } = useToast();
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -100,7 +101,7 @@ const Tutors = () => {
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12">
               {/* Benefits Section */}
-               <div>
+              <div>
                 <h2 className="text-2xl font-bold mb-6 text-center">Share Your Expertise</h2>
                 <p className="text-center text-gray-700 mb-6">
                   Share your passion for chess and build a flexible career with GoChess.
@@ -241,6 +242,54 @@ const Tutors = () => {
                   </CardContent>
                 </Card>
               </div>
+            </div>
+          </div>
+        </section>
+        {/* Testimonials */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <SectionTitle 
+              title="What Our Tutors Say" 
+              subtitle="Get in touch with our team for any inquiries or support"
+              center
+            />
+            
+            <div className="grid md:grid-cols-3 gap-8 mt-12">
+              <Card className="p-6">
+                <div className="space-y-4">
+                  <p className="italic text-gray-600">
+                    "Joining GoChess has transformed my teaching career. The flexible schedule allows me to balance coaching with my tournament play, and the platform makes it easy to connect with motivated students."
+                  </p>
+                  <div>
+                    <p className="font-semibold">Anand K.</p>
+                    <p className="text-sm text-gray-500">FIDE Master, Teaching for 3 years</p>
+                  </div>
+                </div>
+              </Card>
+              
+              <Card className="p-6">
+                <div className="space-y-4">
+                  <p className="italic text-gray-600">
+                    "As someone passionate about chess education, GoChess has been the perfect platform. The teaching resources are excellent, and the staff is always supportive of our needs."
+                  </p>
+                  <div>
+                    <p className="font-semibold">Priya M.</p>
+                    <p className="text-sm text-gray-500">National Instructor, Teaching for 5 years</p>
+                  </div>
+                </div>
+              </Card>
+              
+              <Card className="p-6">
+                <div className="space-y-4">
+                  <p className="italic text-gray-600">
+                    "The institutional placements through GoChess have provided me with stable teaching opportunities at schools. It's rewarding to introduce chess to young minds and watch them grow."
+                  </p>
+                  <div>
+                    <p className="font-semibold">Rajiv S.</p>
+                    <p className="text-sm text-gray-500">Chess Coach, Teaching for 7 years</p>
+                  </div>
+                </div>
+              </Card>
             </div>
           </div>
         </section>
