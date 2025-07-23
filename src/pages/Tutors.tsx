@@ -8,15 +8,32 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Check, Upload } from 'lucide-react';
+import { db } from '@/lib/firebase';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+
 
 const Tutors = () => {
   const { toast } = useToast();
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    chessRating: '',
+    experience: '',
+    aboutYou: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
+  };
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
-      if (file.size > 5 * 1024 * 1024) { // 5MB limit
+      if (file.size > 5 * 1024 * 1024) {
         toast({
           title: "File too large",
           description: "Please upload a file smaller than 5MB",
@@ -40,13 +57,28 @@ const Tutors = () => {
     }
   };
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    // Add your form submission logic here
-    toast({
-      title: "Application submitted",
-      description: "We'll review your application and get back to you soon!"
-    });
+    try {
+      await addDoc(collection(db, 'tutor_applications'), {
+        ...formData,
+        timestamp: serverTimestamp(),
+        fileName: selectedFile?.name || null,
+      });
+      toast({
+        title: "Application submitted",
+        description: "We'll review your application and get back to you soon!"
+      });
+      setFormData({ firstName: '', lastName: '', email: '', phone: '', chessRating: '', experience: '', aboutYou: '' });
+      setSelectedFile(null);
+    } catch (error) {
+      console.error('Error submitting application:', error);
+      toast({
+        title: "Submission failed",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive"
+      });
+    }
   };
 
   return (
@@ -144,43 +176,45 @@ const Tutors = () => {
                       <div className="grid md:grid-cols-2 gap-4">
                         <div>
                           <label htmlFor="firstName" className="block text-sm font-medium mb-1">First Name</label>
-                          <Input id="firstName" placeholder="Enter your first name" />
+                          <Input id="firstName" value={formData.firstName} onChange={handleChange} placeholder="Enter your first name" />
                         </div>
                         <div>
                           <label htmlFor="lastName" className="block text-sm font-medium mb-1">Last Name</label>
-                          <Input id="lastName" placeholder="Enter your last name" />
+                          <Input id="lastName" value={formData.lastName} onChange={handleChange} placeholder="Enter your last name" />
                         </div>
                       </div>
-                      
+
                       <div>
                         <label htmlFor="email" className="block text-sm font-medium mb-1">Email</label>
-                        <Input id="email" type="email" placeholder="Enter your email" />
+                        <Input id="email" type="email" value={formData.email} onChange={handleChange} placeholder="Enter your email" />
                       </div>
-                      
+
                       <div>
                         <label htmlFor="phone" className="block text-sm font-medium mb-1">Phone Number</label>
-                        <Input id="phone" placeholder="Enter your phone number" />
+                        <Input id="phone" value={formData.phone} onChange={handleChange} placeholder="Enter your phone number" />
                       </div>
-                      
+
                       <div>
                         <label htmlFor="chessRating" className="block text-sm font-medium mb-1">Chess Rating (if any)</label>
-                        <Input id="chessRating" placeholder="FIDE/National Rating" />
+                        <Input id="chessRating" value={formData.chessRating} onChange={handleChange} placeholder="FIDE/National Rating" />
                       </div>
-                      
+
                       <div>
                         <label htmlFor="experience" className="block text-sm font-medium mb-1">Years of Experience</label>
-                        <Input id="experience" type="number" placeholder="Years of playing/teaching" />
+                        <Input id="experience" type="number" value={formData.experience} onChange={handleChange} placeholder="Years of playing/teaching" />
                       </div>
-                      
+
                       <div>
                         <label htmlFor="aboutYou" className="block text-sm font-medium mb-1">Tell Us About Yourself</label>
                         <Textarea 
                           id="aboutYou" 
+                          value={formData.aboutYou} 
+                          onChange={handleChange} 
                           placeholder="Share your chess journey, teaching experience, and why you want to join GoChess" 
                           rows={4}
                         />
                       </div>
-                      
+
                       <div>
                         <label className="block text-sm font-medium mb-2">Upload Resume/Certificate</label>
                         <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center cursor-pointer hover:bg-gray-50 transition-colors">
@@ -200,7 +234,7 @@ const Tutors = () => {
                           </label>
                         </div>
                       </div>
-                      
+
                       <Button type="submit" className="w-full bg-chess-primary hover:bg-chess-secondary">
                         Submit Application
                       </Button>
@@ -211,7 +245,6 @@ const Tutors = () => {
             </div>
           </div>
         </section>
-
         {/* Testimonials */}
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
