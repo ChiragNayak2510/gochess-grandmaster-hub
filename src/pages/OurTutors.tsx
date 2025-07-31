@@ -119,6 +119,7 @@ const OurTutors = () => {
               title="Meet Our Expert Chess Tutors"
               subtitle="Learn from experienced coaches dedicated to your chess development"
               center
+              
             />
           </div>
         </div>
