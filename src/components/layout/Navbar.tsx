@@ -54,15 +54,16 @@ const Navbar = () => {
           <Link to="/tutors" className="text-base font-medium hover:text-gochess-orange transition-colors font-inter">
             Become a Tutor
           </Link>
+          
+          <Link to="/student-registration " className="text-base font-medium hover:text-gochess-orange transition-colors font-inter">
+            Join as student
+          </Link> 
+
           <Button variant="outline" className="border-gochess-orange text-gochess-orange hover:bg-gochess-orange hover:text-white hover:bg-black  text-base font-inter" onClick={()=>{window.open("https://phantom-chess-56mz.vercel.app/dashboard","_blank")}}>
             <Gamepad2 className="mr-2 h-4 w-4" />
             Play Chess Variants
           </Button>
-          <Link to="/student-registration">
-            <Button className="bg-gochess-blue hover:bg-gochess-navy font-inter">
-              Join as Student
-            </Button>
-          </Link>
+          
         </div>
 
         {/* Mobile Menu Button */}
